@@ -32,7 +32,7 @@ export default function UpperCase(props) {
 
             <div className="container">
                 <h4>Word count and length of characters are as:</h4>
-                <p>No. of characters with spaces included: {text.length}</p>
+                <p>No. of characters are: {text.length}</p>
                 <p>Word count: {text.split(' ').length}</p>
 
 
