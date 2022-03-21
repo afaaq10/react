@@ -7,7 +7,7 @@ export default function Navbar(props) {
         <>
             <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="/">{props.title}</a>
+                    <Link className="navbar-brand" href="/">{props.title}</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -32,6 +32,26 @@ export default function Navbar(props) {
                             </li>
 
                         </ul>
+                        <div className="d-flex">
+
+                            <div className="bg-primary rounded mx-2" style={{ width: '20px', height: '20px' }}
+
+
+                                onClick={() => { props.bgcol('primary') }}></div>
+                            <div className="bg-secondary rounded mx-2" style={{ width: '20px', height: '20px' }}
+
+
+                                onClick={() => { props.bgcol('secondary') }}></div>
+                            <div className="bg-danger rounded mx-2" style={{ width: '20px', height: '20px' }}
+
+
+                                onClick={() => { props.bgcol('danger') }}></div>
+                            <div className="bg-success rounded mx-2" style={{ width: '20px', height: '20px' }}
+
+
+                                onClick={() => { props.bgcol('success') }}></div>
+                        </div>
+
 
                         <form className="d-flex">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -43,10 +63,13 @@ export default function Navbar(props) {
             </nav>
 
 
+
+
+
             <div className={` container bg-${props.mode} ms-0`}>
 
                 <div className={`form-check form-switch text-${props.mode === 'light' ? '#111111' : 'light'} mx-2`}>
-                    <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" onClick={props.bgcol} />
+                    <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" onClick={() => { props.bgcol(null) }} />
                     <label className="form-check-label" for="flexSwitchCheckChecked">Enable dark mode</label>
                 </div>
 
