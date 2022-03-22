@@ -259,7 +259,7 @@ function App() {
       <button onClick={click}>Get weather</button>
       <h1>{name}</h1>
       <h1>{desc}</h1>
-      <h1>{temp}</h1>
+      <h1>{Math.round(temp)}Celsius</h1>
 
 
     </div>
