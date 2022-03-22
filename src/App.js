@@ -216,12 +216,15 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import './App.css'
+
+import './im.jpeg'
 
 
 function App() {
 
   const [weatherData, setWeatherData] = useState(null);
-  const [city, setCity] = useState('Pakistan');
+  const [city, setCity] = useState('Srinagar');
 
   const getData = () => {
     // const APIKey = '99b72ecbbf458bcf9abee98ce7ca2415';
@@ -240,29 +243,53 @@ function App() {
   const name = weatherData ? weatherData.name : '';
   const desc = weatherData ? weatherData.weather[0].description : '';
   const temp = weatherData ? weatherData.main.temp : '';
-
+  document.body.style = 'background-color:violet '
+  document.body.style = 'background-image:url("https://images.news18.com/ibnlive/uploads/2021/07/1627207399_space-1600x1200.jpg") '
+ 
 
   const typing = (e) => {
     setCity(e.target.value);
   }
   const click = () => {
     getData();
+
   }
+
+  useEffect(() => {
+    getData();
+
+    document.getElementById('in').focus();
+
+  }, [])
 
 
 
   return (
-    <div>
+    <>
 
 
-      <input type="text" onChange={typing} />
-      <button onClick={click}>Get weather</button>
-      <h1>{name}</h1>
-      <h1>{desc}</h1>
-      <h1>{Math.round(temp)}Celsius</h1>
+      <div className="weather">
+      
+        {/* <input type="text" onChange={typing} /> */}
+        {/* <button onClick={click} >Get weather</button> */}
+        <input id="in" class="form-control form-control-lg mt-1" type="text" onChange={typing} placeholder="Enter your city here" aria-label=".form-control-lg example" />
+        <div class="text-center">
+        <button type="button" onClick={click} class="btn btn-outline-primary mt-3 text-center">Get weather</button>
+        {/* <button onClick={click} >Get weather</button> */}
+        </div>
+      </div>
+
+      <div className="cen">
+      <h1>{`City : ${name}`}</h1>
+      <h1>  {`Temperature : ${temp} Celsius`}</h1>
+      <h1>{`Weather : ${desc}`}</h1>
+      </div>
 
 
-    </div>
+
+      
+    </>
+
   )
 }
 
