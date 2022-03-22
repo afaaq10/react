@@ -280,9 +280,9 @@ function App() {
       </div>
 
       <div className="cen">
-      <h1>{`City : ${name}`}</h1>
-      <h1>  {`Temperature : ${temp} Celsius`}</h1>
-      <h1>{`Weather : ${desc}`}</h1>
+      <h1>{`City: ${name}`}</h1>
+      <h1>  {`Temperature: ${temp} C`}</h1>
+      <h1>{`Weather: ${desc}`}</h1>
       </div>
 
 
